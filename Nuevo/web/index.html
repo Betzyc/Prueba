@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h3>Tareas</h3>
+            <form action="Controlador" method="POST">
+                <input type="submit" name="action" value="Listar">
+            </form>
+            <div>
+                <table border ="1">
+                    <thead>
+                        <tr>
+                            <th>Proyecto</th>
+                            <th>Id Tarea</th>
+                            <th>Tarea</th>
+                            <th>Descripcion</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Final</th>
+                            <th>Estado</th>
+                        </tr>
+                    <tbody>
+                    <c:forEach var="dato" items="${datos}">
+                        <tr>
+                            <td>${dato.getIdTarea()}</td>
+                            <td>${dato.getIdProyecto()}</td>
+                            <td>${dato.getNombreTarea()}</td>
+                            <td>${dato.getDescripcionTarea()}</td>
+                            <td>${dato.getFechaInicio()}</td>
+                            <td>${dato.getFechaFinal()}</td>
+                            <td>${dato.getEstado()}</td>
+                            <td>
+                                <form>
+                                    <input typye="submit" value="Editar">
+                                    <input type ="submit" value="Eliminar"
+                                </form>
+                            </td>
+                         </tr>
+                    </c:foreach>    
+                    </tbody>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
